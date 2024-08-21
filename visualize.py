@@ -1,3 +1,14 @@
+#Function to plot a ring chart
+def plot_ring_chart(sentiments):
+    sizes = [sentiments['positive'], sentiments['neutral'], sentiments['negative']]
+    labels = ['Positive', 'Neutral', 'Negative']
+    
+    #Define colors for the ring chart
+    colors = ['#4caf50', '#ffeb3b', '#f44336']
+    
+    fig, ax = plt.subplots()
+    wedges, texts, autotexts = ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%',
+                                      startangle=90, wedgeprops=dict(width=0.3))
     ax.legend(wedges, labels,
               title="Sentiment",
               loc="center left",
