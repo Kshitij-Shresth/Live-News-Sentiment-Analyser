@@ -47,3 +47,16 @@ img.seek(0)
 plt.close()
 
 return img
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        query = request.form['query']
+        sentiments = analyze_sentiment(query)
+        img = plot_ring_chart(sentiments)
+
+        return send_file(img, mimetype='image/png', as_attachment=False, download_name='chart.png')
+
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
