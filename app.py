@@ -29,3 +29,16 @@ response = requests.get(endpoint, params=params)
             sentiments['negative'] += 1
 
     return sentiments
+
+def plot_ring_chart(sentiments):
+    sizes = [sentiments['positive'], sentiments['neutral'], sentiments['negative']]
+    labels = ['Positive', 'Neutral', 'Negative']
+    colors = ['#4caf50', '#ffeb3b', '#f44336']
+
+    fig, ax = plt.subplots()
+    wedges, _, autotexts = ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%',
+                                  startangle=90, wedgeprops=dict(width=0.3))
+
+    plt.setp(autotexts, size=10, weight="bold")
+    plt.title('Sentiment Analysis Ring Chart')
+
