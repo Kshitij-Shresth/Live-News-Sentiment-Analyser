@@ -38,7 +38,12 @@ def plot_ring_chart(sentiments):
     fig, ax = plt.subplots()
     wedges, _, autotexts = ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%',
                                   startangle=90, wedgeprops=dict(width=0.3))
+plt.setp(autotexts, size=10, weight="bold")
+plt.title('Sentiment Analysis Ring Chart')
 
-    plt.setp(autotexts, size=10, weight="bold")
-    plt.title('Sentiment Analysis Ring Chart')
+img = io.BytesIO()
+plt.savefig(img, format='png')
+img.seek(0)
+plt.close()
 
+return img
