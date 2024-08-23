@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <h1>News Sentiment Analysis</h1>
+    <form action="/" method="post">
+        <label for="query">Enter topic to analyze:</label>
+        <input type="text" id="query" name="query" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if request.method == 'POST' %}
+    <h2>Sentiment Analysis Result:</h2>
+    <img src="{{ url_for('index') }}" alt="Sentiment Chart">
+    {% endif %}
+</body>
+</html>
 
