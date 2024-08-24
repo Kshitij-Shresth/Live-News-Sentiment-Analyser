@@ -12,9 +12,15 @@ View the sentiment distribution (positive, neutral, negative) in an easy-to-read
 A user-friendly interface built with Flask.
 
 ## Installation
-## Prerequisites
+### Prerequisites
 Python 3.8+
 A valid News API key
 
 ``git clone https://github.com/Kshitij-Shresth/Live-News-Sentiment-Analyser.git
 cd news-sentiment-analyzer``
+
+``python3 -m venv venv
+source venv/bin/activate  #On Windows use `venv\Scripts\activate``
+
+``api_key = 'your_news_api_key_here'
+#Setup the NewsApi key``
