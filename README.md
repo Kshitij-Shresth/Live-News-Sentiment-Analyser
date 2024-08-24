@@ -24,3 +24,10 @@ source venv/bin/activate  #On Windows use `venv\Scripts\activate``
 
 ``api_key = 'your_news_api_key_here'
 #Setup the NewsApi key``
+
+## Structure
+``sentiment_analysis_app/
+├── app.py                  #The main Flask application
+├── templates/
+│   └── index.html          #HTML template for the front end
+``
